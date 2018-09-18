@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- development version, includes helpful console warnings -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>Vue</title>
+</head>
+	<body>
+		<div id="app">
+			<h2>{{product}} are in stock {{ammo}}</h2>
+		</div>
+
+		<div id="list">
+			<ul>
+				<li v-for="grocery in list">
+					{{ grocery }}
+				</li>
+			</ul>
+		</div>
+
+
+	</body>
+</html>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			product: 'Boots',
+			ammo: 100
+		}
+	})
+
+	const ls = new Vue({
+		el: '#list',
+		data: {
+			list: [
+				'banana',
+				'apple',
+				'nut'
+			]
+		}
+	})
+	// var product = 'Boots'
+</script>
