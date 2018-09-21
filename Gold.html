@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://fb.me/react-0.14.7.js"></script>
+	<title>Gold</title>
+</head>
+	<body>
+		<div class="panel-content">
+
+			<div id="app">
+				<h2 v-if="stock > 0">{{product}} are in stock</h2>
+				<button class="btn-purchase" v-on:click="stock += 1"><a href="#">Buy</a></button>
+				<button class="btn-sell" v-on:click="stock -= 1"><a href="#">Sell</a></button>
+				<button class="btn-earn" v-on:click="stock += Math.ceil(Math.random()*10)"><a href="#">Earn</a></button>
+				<button class="btn-trade" v-on:click="stock -= Math.ceil(Math.random()*10)"><a href="#">Trade</a></button>
+
+				 {{ stock }} Items Left
+			</div>
+		</div>
+
+	</body>
+</html>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			product: 'Gold Bars',
+			stock: 100,
+			counter: 0
+		}
+	});
+
+
+</script>
+
+<style type="text/css">
+	a{
+		text-decoration: none;
+		color: black;
+	}
+
+
+	#app{
+		font-family: Arial;
+		font-size: 12px;
+	}
+
+	.panel-content{
+		background-color: #DCDCDC;
+		border-radius: 5px;
+		height: 50%;
+		width: 50%;
+		box-shadow: 15px;
+	}
+
+	.btn{
+		height: 35px;
+		width: 75px;
+		font-weight: bold;
+		font-size: 13px;
+		border-radius: 0.3rem;
+		background-color: white;
+	}
+
+	.btn-purchase{
+		height: 35px;
+		width: 75px;
+		font-weight: bold;
+		font-size: 13px;
+		border-radius: 0.3rem;
+		background-color: #00b200;
+	}
+
+	.btn-sell{
+		height: 35px;
+		width: 75px;
+		font-weight: bold;
+		font-size: 13px;
+		border-radius: 0.3rem;
+		background-color: red;
+	}
+
+	.btn-earn{
+		height: 35px;
+		width: 75px;
+		font-weight: bold;
+		font-size: 13px;
+		border-radius: 0.3rem;
+		background-color: yellow;
+	}
+
+	.btn-trade{
+		height: 35px;
+		width: 75px;
+		font-weight: bold;
+		font-size: 13px;
+		border-radius: 0.3rem;
+		background-color: orange;
+	}
+</style>
